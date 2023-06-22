@@ -3,7 +3,7 @@ import datetime
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import csv
-from team_wise_scrap import get_player_info, create_csv_file
+from team_wise_scrap import get_player_info
 
 
 def main():
