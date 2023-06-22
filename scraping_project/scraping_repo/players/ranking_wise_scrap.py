@@ -33,6 +33,28 @@ def main():
             browser.back()
     except:
         raise Exception("browser not found")
+        
+def create_csv_file():
+    '''This function is used for create csv file by considering datetime'''
+    try:
+        'Here we use datetime module which used to found unique number for our csv file name'
+        current_time_span = datetime.datetime.now().strftime("%f")
+        'we store in file name variable and use f string to use datetime microseconds'
+        file_name = f"player_ranking_wise{current_time_span}.csv"
+        "This header list used to display in csv heading for column head name"
+        header = ['Player Image Url', 'Player Name', 'Player Position', 'Player Height', 'Player Weight',
+                  'Player High School Name', 'Player City Name', 'Player state', 'Player Class', 'Offers Dictionary',
+                  'Commitments Dictionary']
+        with open(file_name, 'w') as file:
+            'here we use open function to open and write our file'
+            writer = csv.writer(file)
+            'here we write our csv file'
+            writer.writerow(header)
+            'here we add header first row'
+        return file_name
+    except:
+        print("Csv file not created")
+
 
 
 if __name__ == '__main__':
