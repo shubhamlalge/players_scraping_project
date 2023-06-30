@@ -62,6 +62,7 @@ def start_update_script():
                             with open('player_info_20230619143136(copy).csv', 'w', newline="") as file:
                                 writer = csv.writer(file)
                                 writer.writerows(row_list)
+                                browser.close()
 
                             print("Data updated")
                         except Exception as e:
